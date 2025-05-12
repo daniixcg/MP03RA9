@@ -4,32 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/vue@3"></script>
-    <link rel="stylesheet" href="./styles.css">
-    <script defer src="./js/main.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" defer src="js/main.js"></script>
     <title>Gestor de Contactes</title>
 </head>
 <body>
-    <div class="caja" id="maindiv">
-        <div class="caja" id="formdiv">
-            <div class="caja" id="afegirdiv">
+    <div id="maindiv">
+        <div id="formdiv">
+            <div id="afegirdiv">
                 <h2>Nou Contacte</h2>
                 <label for="nom">Nom:</label>
-                <input type="text" id="nom" name="nom">
+                <input v-model="viewModel.newContact.nom" type="text" id="nom" name="nom">
 
                 <label for="cognoms">Cognoms:</label>
-                <input type="text" id="cognoms" name="cognoms">
+                <input v-model="viewModel.newContact.cognoms" type="text" id="cognoms" name="cognoms">
                 
                 <label for="telefon">Telèfon:</label>
-                <input type="tel" id="telefon" name="telefon">
+                <input v-model="viewModel.newContact.telefon" type="tel" id="telefon" name="telefon">
                 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
+                <input v-model="viewModel.newContact.email" type="email" id="email" name="email">
                 
+                <button @click="viewModel.addContact">Afegir Contacte</button>
             </div>
-            <button class="caja" id="afegirbtn">Afegir Contacte</button>
         </div>
-        <div class="caja" id="contactsdiv">
 
+        <div id="contactsdiv">
+            <h3>Contactes</h3>
+            <ul>
+                <li v-for="contact in viewModel.contacts" :key="contact._id">
+                    <p>{{ contact.nom }} {{ contact.cognoms }} - {{ contact.telefon }} - {{ contact.email }}</p>
+                    <button @click="viewModel.deleteContact(contact._id)">Eliminar</button>
+                    <button @click="viewModel.editContact(contact)">Editar</button>
+                </li>
+            </ul>
         </div>
     </div>
 </body>
