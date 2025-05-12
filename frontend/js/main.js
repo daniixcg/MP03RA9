@@ -1,14 +1,8 @@
 import { ViewModel } from './viewmodel.js';
+import { View } from './view.js';
 
-const app = Vue.createApp({
-  data() {
-    return {
-      viewModel: new ViewModel()  // ViewModel inicializado directamente
-    };
-  },
-  created() {
-    this.viewModel.init();  // Llamar a init para obtener los contactos
-  }
+document.addEventListener('DOMContentLoaded', () => {
+    const viewModel = new ViewModel();
+    const view = new View(viewModel);
+    view.initialize();
 });
-
-app.mount('#maindiv');
