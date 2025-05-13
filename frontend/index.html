@@ -9,36 +9,6 @@
     <title>Gestor de Contactes</title>
 </head>
 <body>
-    <div id="maindiv">
-        <div id="formdiv">
-            <div id="afegirdiv">
-                <h2>Nou Contacte</h2>
-                <label for="nom">Nom:</label>
-                <input v-model="viewModel.newContact.nom" type="text" id="nom" name="nom">
-
-                <label for="cognoms">Cognoms:</label>
-                <input v-model="viewModel.newContact.cognoms" type="text" id="cognoms" name="cognoms">
-                
-                <label for="telefon">Telèfon:</label>
-                <input v-model="viewModel.newContact.telefon" type="tel" id="telefon" name="telefon">
-                
-                <label for="email">Email:</label>
-                <input v-model="viewModel.newContact.email" type="email" id="email" name="email">
-                
-                <button @click="addContact">Afegir Contacte</button>
-            </div>
-        </div>
-
-        <div id="contactsdiv">
-            <h3>Contactes</h3>
-            <ul>
-                <li v-for="contact in viewModel.contacts" :key="contact._id">
-                    <p>{{ contact.nom }} {{ contact.cognoms }} - {{ contact.telefon }} - {{ contact.email }}</p>
-                    <button @click="deleteContact(contact._id)">Eliminar</button>
-                    <button @click="editContact(contact)">Editar</button>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <div id="app"></div>
 </body>
 </html>
