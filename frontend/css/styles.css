@@ -1,45 +1,99 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
+#afegirdiv input[type="text"],
+#afegirdiv input[type="tel"],
+#afegirdiv input[type="email"] {
+    width: 98%;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    border: 1.5px solid #bbb;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    background: #fafbfc;
+}
+
+#afegirdiv label {
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+    color: #333;
+}
+
+#contactsdiv li {
+    background-color: #e0e0e0;
+    margin-bottom: 14px;
+    padding: 14px 12px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    list-style: none;
+}
+
+#contactsdiv li p {
+    margin: 0;
+    flex: 1;
+    font-size: 1.08rem;
+    color: #222;
+    word-break: break-word;
+}
+
+.contact-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    margin-left: 12px;
+}
+
+button {
+    padding: 7px 18px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1976d2;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 2px rgba(25, 118, 210, 0.08);
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #125ea7;
+}
+
+#page-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
 #maindiv {
     display: flex;
     flex-direction: row;
-    gap: 30px;
-    max-width: 1000px;
-    margin: auto;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: flex-start;
 }
 
-#formdiv, #contactsdiv {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    flex: 1;
+#formdiv {
+    flex: 1 1 320px;
+    max-width: 400px;
 }
 
-#afegirdiv {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+#contactsdiv {
+    flex: 2 1 0;
+    max-width: 100%;
+    min-width: 0;
+    padding-left: 0;
 }
 
 #contactsdiv ul {
-    list-style: none;
-    padding: 0;
-}
-
-#contactsdiv li {
-    background-color: #e0e0e0;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-button {
-    margin-right: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
+    padding-left: 0;
+    margin: 0;
 }
