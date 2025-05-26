@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/contactes";
+const API_URL = "http://213.97.62.3:3006/api/contactes";
 
 export class Contacte {
   constructor(id, nom, cognoms, telefon, email) {
